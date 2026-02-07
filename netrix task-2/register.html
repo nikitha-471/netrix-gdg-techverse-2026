@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader"><div class="spinner"></div></div>
+
+<nav>
+  <h2>TechEvent</h2>
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="speakers.html">Speakers</a>
+    <a href="register.html">Register</a>
+    <a href="about.html">About</a>
+  </div>
+  <span id="hamburger">☰</span>
+  <button id="themeToggle">🌙</button>
+</nav>
+
+<section class="container">
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <select>
+      <option>Web</option>
+      <option>AI / ML</option>
+      <option>Cyber</option>
+      <option>Cloud</option>
+    </select>
+    <button type="submit">Register</button>
+  </form>
+</section>
+
+<div id="toast">🎉 Registration Successful</div>
+
+<footer>© 2026 Tech Event</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

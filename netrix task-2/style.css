@@ -1,0 +1,254 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #0f172a;
+  font-size: 18px; /* 🔥 BASE FONT SIZE INCREASED */
+  line-height: 1.7;
+}
+
+/* ================= LOADER ================= */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.spinner {
+  width: 70px;
+  height: 70px;
+  border: 7px solid #38bdf8;
+  border-top: 7px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  background: #020617;
+  padding: 22px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h2 {
+  color: #38bdf8;
+  font-size: 30px; /* 🔥 BIGGER LOGO */
+  letter-spacing: 1px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 18px;
+  font-size: 19px;
+  font-weight: 500;
+}
+.menu a:hover {
+  color: #38bdf8;
+}
+
+#hamburger {
+  display: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 90vh; /* 🔥 USE SCREEN */
+  background: linear-gradient(120deg,#020617,#1e293b);
+  color: white;
+  padding: 140px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 72px; /* 🔥 MASSIVE TITLE */
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 26px;
+  opacity: 0.9;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  max-width: 1400px; /* 🔥 MORE WIDTH */
+  margin: auto;
+  padding: 100px 40px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+}
+
+.card {
+  background: white;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.12);
+  font-size: 22px; /* 🔥 BIG CONTENT */
+  font-weight: 600;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .7s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+/* ================= FORM ================= */
+form {
+  background: white;
+  padding: 60px;
+  border-radius: 18px;
+  max-width: 650px;
+  margin: auto;
+  box-shadow: 0 25px 50px rgba(0,0,0,.12);
+}
+
+input, select {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+button {
+  width: 100%;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #38bdf8;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0ea5e9;
+}
+
+/* ================= TOAST ================= */
+#toast {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #38bdf8;
+  padding: 18px 28px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .4s;
+}
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #020617;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+body.dark .card,
+body.dark form {
+  background: #020617;
+  border: 1px solid #1e293b;
+}
+body.dark input,
+body.dark select {
+  background: #020617;
+  color: white;
+  border: 1px solid #334155;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+
+  nav {
+    padding: 18px 30px;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #020617;
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+  }
+  .menu.show {
+    display: flex;
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 70px 25px;
+  }
+}
